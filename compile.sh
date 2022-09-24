@@ -1,1 +1,1 @@
-javac -d bin $(find ./src/ -type f -name '*.java')
+javac -Xlint:unchecked -d bin $(find ./src/ -type f -name '*.java')
