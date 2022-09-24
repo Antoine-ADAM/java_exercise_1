@@ -45,7 +45,7 @@ public class Predict implements Command {
 
             StringBuilder out= new StringBuilder();
             final int limit = 20;
-            out.append(first);
+            out.append(first.toLowerCase());
             int index = findIndex(uniques, first.toLowerCase());
             if (index == -1){
                 System.out.println("Le mot n'est pas dans le texte");
@@ -57,9 +57,7 @@ public class Predict implements Command {
                 }
                 var select = nextKeys[index].entrySet().stream().max(Map.Entry.comparingByValue());
                 if (select.isPresent()){
-                    int tmp =index;
                     index = select.get().getKey();
-                    nextKeys[tmp].remove(index);//remove the most probable key to avoid repetition
                     out.append(" ").append(uniques[index]);
                 }else {
                     break;
