@@ -1,7 +1,4 @@
-import commands.Command;
-import commands.Fibo;
-import commands.Freq;
-import commands.Quit;
+import commands.*;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -20,6 +17,7 @@ public class Launcher {
         commands.add(new Fibo());
         commands.add(new Freq());
         commands.add(new Quit());
+        commands.add(new Predict());
         String response;
         boolean found;
         while (true){

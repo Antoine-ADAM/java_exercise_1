@@ -35,8 +35,9 @@ public class Freq implements Command {
                     map.remove(select.get().getKey());
                 }
             }
-            out.deleteCharAt(out.length()-1);
-            System.out.println(out);
+            if (out.length() > 0){
+                System.out.println(out.substring(0, out.length()-1));
+            }
         }catch (IOException e){
             System.out.println("Unreadable file: "+e.getClass().getName()+" "+e.getMessage());
         }
